@@ -16,17 +16,46 @@ GEM
       tzinfo (~> 1.1)
     arel (6.0.3)
     builder (3.2.2)
+    cucumber (2.3.2)
+      builder (>= 2.1.2)
+      cucumber-core (~> 1.4.0)
+      cucumber-wire (~> 0.0.1)
+      diff-lcs (>= 1.1.3)
+      gherkin (~> 3.2.0)
+      multi_json (>= 1.7.5, < 2.0)
+      multi_test (>= 0.1.2)
+    cucumber-core (1.4.0)
+      gherkin (~> 3.2.0)
+    cucumber-wire (0.0.1)
     daemons (1.2.3)
+    diff-lcs (1.2.5)
     eventmachine (1.0.9.1)
+    gherkin (3.2.0)
     i18n (0.7.0)
     json (1.8.3)
     minitest (5.8.4)
+    multi_json (1.11.2)
+    multi_test (0.1.2)
+    nexmo (3.1.0)
     pg (0.18.4)
     postgresql (1.0.0)
       pg
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
+    rspec (3.4.0)
+      rspec-core (~> 3.4.0)
+      rspec-expectations (~> 3.4.0)
+      rspec-mocks (~> 3.4.0)
+    rspec-core (3.4.2)
+      rspec-support (~> 3.4.0)
+    rspec-expectations (3.4.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-mocks (3.4.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-support (3.4.1)
     sinatra (1.4.7)
       rack (~> 1.5)
       rack-protection (~> 1.4)
@@ -46,7 +75,10 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
+  cucumber
+  nexmo
   postgresql
+  rspec
   sinatra
   sqlite3
   thin
