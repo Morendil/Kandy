@@ -7,6 +7,6 @@ require './lib/reply'
     return unless params[:msisdn]
     reply_text = reply_for params
     nexmo = Nexmo::Client.new
-    nexmo.send_message(from:'Kandy', to: params[:msisdn], text: reply_text)
+    nexmo.send_message(from: ENV.fetch('SMS_SENDER'), to: params[:msisdn], text: reply_text)
   end
 end
