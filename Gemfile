@@ -1,13 +1,13 @@
 source 'https://rubygems.org'
 gem 'sinatra'
 gem 'thin'
-gem 'sqlite3'
 gem 'postgresql'
 gem 'activerecord'
 
 gem 'nexmo'
 
 group :test do
+	gem 'sqlite3'
 	gem 'rspec'
 	gem 'cucumber'
 	gem 'factory_girl'
