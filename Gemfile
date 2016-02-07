@@ -10,4 +10,5 @@ gem 'nexmo'
 group :test do
 	gem 'rspec'
 	gem 'cucumber'
+	gem 'factory_girl'
 end

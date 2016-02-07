@@ -1,7 +1,23 @@
 require 'reply'
 require 'rspec/expectations'
+require 'factory_girl'
+
+ActiveRecord::Base.configurations = YAML::load(File.open('config/database.yml'))
+ActiveRecord::Base.establish_connection
+
+Before do
+  Applicant.destroy_all
+end
+
+FactoryGirl.define do
+  factory :applicant do
+    phone "777"
+    name  "Bob"
+  end
+end
 
 When(/^cell number (\d+) texts Kandy$/) do |cell|
+  @params = @params || {}
   @params[:msisdn] = cell
 end
 
@@ -10,11 +26,13 @@ Then(/^Kandy should respond with "([^"]*)"$/) do |response|
 end
 
 Given(/^cell number (\d+) belongs to "([^"]*)"$/) do |number, name|
-  pending # Write code here that turns the phrase above into concrete actions
+  FactoryGirl.create(:applicant, phone: number.to_s, name: name)
 end
 
-When(/^cell number (\d+) texts Kandy with "([^"]*)"$/) do |number, query|
-  pending # Write code here that turns the phrase above into concrete actions
+When(/^cell number (\d+) texts Kandy with "([^"]*)"$/) do |cell, query|
+  @params = @params || {}
+  @params[:msisdn] = cell
+  @params[:text] = query
 end
 
 Given(/^a job ad (\d+) posted by "([^"]*)" is active$/) do |arg1, arg2|
