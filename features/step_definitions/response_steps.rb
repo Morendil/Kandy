@@ -2,7 +2,7 @@ require 'reply'
 require 'rspec/expectations'
 
 When(/^cell number (\d+) texts Kandy$/) do |cell|
-  @params[:From] = cell
+  @params[:msisdn] = cell
 end
 
 Then(/^Kandy should respond with "([^"]*)"$/) do |response|
