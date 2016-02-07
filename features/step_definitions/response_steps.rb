@@ -9,11 +9,11 @@ Then(/^Kandy should respond with "([^"]*)"$/) do |response|
   expect(reply_for @params).to match(/#{response}/m)
 end
 
-Given(/^cell number (\d+) belongs to "([^"]*)"$/) do |arg1, arg2|
+Given(/^cell number (\d+) belongs to "([^"]*)"$/) do |number, name|
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-When(/^cell number (\d+) texts Kandy with "([^"]*)"$/) do |arg1, arg2|
+When(/^cell number (\d+) texts Kandy with "([^"]*)"$/) do |number, query|
   pending # Write code here that turns the phrase above into concrete actions
 end
 
