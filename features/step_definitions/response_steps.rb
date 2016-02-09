@@ -36,5 +36,4 @@ When(/^cell number (\d+) texts Kandy with "([^"]*)"$/) do |cell, query|
 end
 
 Given(/^a job ad (\d+) posted by "([^"]*)" is active$/) do |arg1, arg2|
-  pending # Write code here that turns the phrase above into concrete actions
 end
