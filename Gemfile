@@ -6,6 +6,8 @@ gem 'activerecord'
 
 gem 'nexmo'
 
+gem 'haml'
+
 group :test do
 	gem 'sqlite3'
 	gem 'rspec'
